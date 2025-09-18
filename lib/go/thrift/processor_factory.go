@@ -30,6 +30,8 @@ import (
 type TProcessor interface {
 	Process(ctx context.Context, in, out TProtocol) (bool, TException)
 
+	ServiceName() string
+	
 	// ProcessorMap returns a map of thrift method names to TProcessorFunctions.
 	ProcessorMap() map[string]TProcessorFunction
 
